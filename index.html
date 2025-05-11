@@ -1,431 +1,281 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dafi Nur Fajri - Portfolio</title>
-  <style>
-    /* Reset CSS */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Ucapan Romantis untuk Mantan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Dancing+Script&display=swap');
 
-    body {
-      font-family: 'Arial', sans-serif;
-      background: #0f172a;
-      color: #fff;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+  /* Reset & base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    /* Aurora Background */
-    .aurora-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, #6366f1, #ec4899, #f59e0b, #6366f1);
-      background-size: 300% 300%;
-      opacity: 0.1;
-      z-index: -1;
-      animation: aurora 20s infinite ease-in-out;
-      filter: blur(10px);
-    }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #a1c4fd);
+    color: #5a1a3e;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    user-select: none;
+  }
 
-    @keyframes aurora {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+  /* Profile Section */
+  .profile-section {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+  }
 
-    /* Navbar */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(15, 23, 42, 0.8);
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 100;
-    }
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #818cf8;
-    }
+  /* Message Section */
+  .message-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
 
-    .burger-menu {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      cursor: pointer;
-    }
+  .message-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
 
-    .burger-menu span {
-      width: 20px;
-      height: 2px;
-      background: #fff;
-      transition: 0.3s ease;
-    }
+  .message-header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #d91e6a;
+    margin-bottom: 1rem;
+  }
 
-    .burger-menu.active span:nth-child(1) {
-      transform: rotate(45deg) translate(4px, 4px);
-    }
+  .message-header p {
+    font-size: 1.1rem;
+    color: #6e2653;
+  }
 
-    .burger-menu.active span:nth-child(2) {
+  .message-content {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+  }
+
+  .message-content::before {
+    content: '"';
+    font-size: 4rem;
+    color: #d91e6a;
+    opacity: 0.5;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+  }
+
+  .message-content::after {
+    content: '"';
+    font-size: 4rem;
+    color: #d91e6a;
+    opacity: 0.5;
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+  }
+
+  /* Timestamp */
+  .timestamp {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    color: #a74273;
+    font-size: 0.9rem;
+  }
+
+  /* Message Separator */
+  .separator {
+    height: 2px;
+    background: #d91e6a;
+    margin: 2rem 0;
+  }
+
+  /* Gallery Section */
+  .gallery-section {
+    padding: 2rem;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .gallery-item {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  /* Music Player */
+  .music-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .music-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .music-controls button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: #d91e6a;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .music-controls button:hover {
+    background: #ff1a72;
+    transform: scale(1.1);
+  }
+
+  .song-title {
+    font-size: 0.9rem;
+    color: #5a1a3e;
+    min-width: 100px;
+    text-align: center;
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    0% {
       opacity: 0;
+      transform: translateY(30px);
     }
-
-    .burger-menu.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(4px, -4px);
-    }
-
-    /* Fullscreen Menu */
-    .fullscreen-menu {
-      position: fixed;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: rgba(15, 23, 42, 0.98);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: 0.5s ease;
-      z-index: 99;
-    }
-
-    .fullscreen-menu.active {
-      left: 0;
-    }
-
-    .menu-items a {
-      display: block;
-      color: #fff;
-      font-size: 2rem;
-      text-decoration: none;
-      margin: 1rem 0;
-      transition: 0.3s ease;
-    }
-
-    .menu-items a:hover {
-      color: #818cf8;
-    }
-
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 1rem;
-    }
-
-    .hero h1 {
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(45deg, #818cf8, #ec4899);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    .hero p {
-      font-size: 1.5rem;
-      color: #94a3b8;
-      margin-bottom: 2rem;
-      animation: fadeIn 2.5s ease-in-out;
-    }
-
-    /* Explore More Button */
-    .animated-button {
-      padding: 1rem 2rem;
-      background: linear-gradient(45deg, #818cf8, #ec4899);
-      color: #fff;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.5s ease;
-      animation: fadeIn 3s ease-in-out;
-    }
-
-    .animated-button::after {
-      content: '→';
-      position: absolute;
-      top: 50%;
-      right: -20px;
-      transform: translateY(-50%);
-      opacity: 0;
-      transition: all 0.5s ease;
-    }
-
-    .animated-button:hover {
-      transform: scale(1.1);
-      background: linear-gradient(45deg, #ec4899, #818cf8);
-      padding-right: 3rem;
-    }
-
-    .animated-button:hover::after {
-      right: 20px;
-      opacity: 1;
-    }
-
-    /* About Section */
-    .about, .projects, .contact {
-      padding: 4rem 1rem;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
-    .about.visible, .projects.visible, .contact.visible {
+    100% {
       opacity: 1;
       transform: translateY(0);
     }
+  }
 
-    .about h2, .projects h2, .contact h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(45deg, #818cf8, #ec4899);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .about p, .projects p, .contact p {
-      font-size: 1.2rem;
-      color: #94a3b8;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    /* Projects Section */
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .project-card {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 1.5rem;
-      border-radius: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .project-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #818cf8;
-    }
-
-    .project-card p {
-      font-size: 1rem;
-      color: #94a3b8;
-    }
-
-    /* Footer */
-    .footer {
-      text-align: center;
-      padding: 2rem;
-      background: #1e293b;
-      margin-top: 2rem;
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes slideUp {
-      from { transform: translateY(50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    /* Popup Selamat Puasa */
-    .puasa-popup {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: rgba(15, 23, 42, 0.98);
-      padding: 2rem;
-      border-radius: 10px;
-      text-align: center;
-      z-index: 1000;
-      display: none;
-    }
-
-    .puasa-popup.active {
-      display: block;
-    }
-
-    .puasa-popup button {
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem; /* Diperbesar */
-      background: #818cf8;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.3s ease;
-    }
-
-    .puasa-popup button:hover {
-      background: #6366f1;
-    }
-  </style>
+  .fade-in-up {
+    animation: fadeInUp 1s ease forwards;
+  }
+</style>
 </head>
 <body>
-  <!-- Aurora Background -->
-  <div class="aurora-bg"></div>
-
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">Dafi Nur</div>
-    <div class="burger-menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </nav>
-
-  <!-- Fullscreen Menu -->
-  <div class="fullscreen-menu">
-    <div class="menu-items">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <h1>I'm Danz</h1>
-    <p>Selamat datang di website portfolio saya</p>
-    <button class="animated-button" onclick="window.location.href='chatai.html'">Explore More</button>
+  <section class="profile-section fade-in-up">
+    <img src="https://files.catbox.moe/o86hjy.jpg" alt="Profile Picture" class="profile-image">
+    <h2>Dear Nailaa 💖</h2>
+    <p>Kenangan kita tetap abadi dalam hati</p>
   </section>
 
-  <!-- About Section -->
-  <section class="about" id="about">
-    <h2>About Me</h2>
-    <p>Saya adalah seorang Beginner Programmer yang sedang belajar bahasa HTML, CSS, dan JavaScript.</p>
-  </section>
-
-  <!-- Projects Section -->
-  <section class="projects" id="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>Madara MD</h3>
-        <p>Sebuah proyek bot WhatsApp yang canggih dengan fitur-fitur modern.</p>
+  <section class="message-section fade-in-up">
+    <div class="message-header">
+      <h1>Ucapan Romantis</h1>
+      <p>Bagi kamu yang selalu ada dalam hatiku</p>
+    </div>
+    <div class="message-content">
+      <div class="timestamp">
+        <span>1 bulan yang lalu</span>
+        <span>12:00 AM</span>
       </div>
-      <div class="project-card">
-        <h3>Levi AI</h3>
-        <p>Sebuah proyek kecerdasan buatan yang dirancang untuk membantu dalam berbagai tugas yang tersedia di WhatsApp.</p>
-      </div>
-      <div class="project-card">
-        <h3>Devian AI</h3>
-        <p>Sebuah proyek kecerdasan buatan yang dirancang untuk membantu dalam berbagai tugas yang tersedia di website.</p>
-      </div>
+      <p>
+        Dear Nailaa hihihihi... <br><br>
+        Udah 1 bulan lebih kita putus ya, bener sih kamu udah putus ma aku tapi rasa ku buat mu bakalan ada terus. <br><br>
+        Sebelum kamu menikah, aku ga bakalan kok cari yang lain. Ntah kamu tuh udah se jauh apa sama aku... <br><br>
+        Mau lost kontak aku bakalan tetep inget banyak masa-masa yang indah bareng kamu ya. Walaupun aku pas pacaran kurang waktu buat kamu, tapi aku sekarang ngerti kok rasanya ga di kasih waktu... itu sakit. <br><br>
+        Mungkin aku bisa memilikinu mungkin juga enggak, jujur aja ya... setelah ga ada kamu hari hariku kayak beda banget deh, kayak murung terus... <br><br>
+        Aku pengen cerita semua tentang keseharian ku tapi gada yang dengerin... hihihihihi... bahkan perempuan yang ku chat aja cuman kamu bener deh. <br><br>
+        Aku dulu terlalu nyia-nyia in waktu, mungkin ini tamparan buat aku buat peduli waktu. Semenjak kita putus tuh, aku mau ngapain gitu biar kamu tau, biar kamu mikir kalau aku ini orangnya rajin, pinter, pokoknya pas banget buat kamu... eh ternyata masih kurang hihihihihi... <br><br>
+        Sampai aku tiap malam mesti mimpi kamu nai, ntah mimpi baik atau buruk sehat sehat sayang aku bakalan ada pulang kapan pun kamu mau...
+      </p>
+      <div class="separator"></div>
+      <p>
+        Aku selalu ingat saat-saat kita bersama, <br>
+        Saat kita pertama kali bertemu, <br>
+        Saat kita berbagi tawa, <br>
+        Dan saat kita saling mencinta. <br><br>
+        Semoga suatu hari kita bisa <br>
+        Kembali bersama lagi... <br>
+        Aku akan menunggumu... 💖
+      </p>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section class="contact" id="contact">
-    <h2>Contact</h2>
-    <p>Jika Anda tertarik untuk bekerja sama, silakan hubungi saya melalui email atau media sosial.</p>
+  <section class="gallery-section fade-in-up">
+    <h2>Mungkin Kamu Masih Ingat</h2>
+    <p>Saat-Saat Ini di Mana Kita Senyum Bareng</p>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="https://files.catbox.moe/jwu1rg.jpg" alt="💓">
+      </div>
+      <div class="gallery-item">
+        <img src="https://files.catbox.moe/cncj84.jpg" alt="💓">
+      </div>
+      <div class="gallery-item">
+        <img src="https://files.catbox.moe/88hlib.jpg" alt="💓">
+      </div>
+      <div class="gallery-item">
+        <img src="https://files.catbox.moe/mtxhu1.jpg" alt="💓">
+      </div>
+    </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 Dafi Nur Fajri.</p>
-  </footer>
-
-  <!-- Popup Selamat Puasa -->
-  <div class="puasa-popup">
-    <p>Selamat Puasa!</p>
-    <button onclick="closePopup()">Lanjutkan</button>
+  <div class="music-player fade-in-up">
+    <audio id="background-music" autoplay loop>
+      <source src="nina.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="music-controls">
+      <button onclick="document.getElementById('background-music').play()">▶</button>
+      <button onclick="document.getElementById('background-music').pause()">⏸</button>
+    </div>
+    <div class="song-title" id="song-title">Feast - Nina</div>
   </div>
 
   <script>
-    // Burger Menu Toggle
-    const burgerMenu = document.querySelector('.burger-menu');
-    const fullscreenMenu = document.querySelector('.fullscreen-menu');
-    burgerMenu.addEventListener('click', () => {
-      burgerMenu.classList.toggle('active');
-      fullscreenMenu.classList.toggle('active');
+    document.getElementById('background-music').addEventListener('play', () => {
+      document.getElementById('song-title').textContent = 'Now Playing: Feast - Nina';
     });
 
-    // Close Menu When Clicking Outside
-    fullscreenMenu.addEventListener('click', (e) => {
-      if (e.target === fullscreenMenu) {
-        burgerMenu.classList.remove('active');
-        fullscreenMenu.classList.remove('active');
-      }
+
+    document.getElementById('background-music').addEventListener('pause', () => {
+      document.getElementById('song-title').textContent = 'Feast - Nina';
     });
-
-    // Smooth Scroll for Menu Links
-    document.querySelectorAll('.menu-items a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-        burgerMenu.classList.remove('active');
-        fullscreenMenu.classList.remove('active');
-      });
-    });
-
-    // Scroll-triggered Animations
-    const sections = document.querySelectorAll('.about, .projects, .contact');
-    const checkVisibility = () => {
-      sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        const sectionBottom = section.getBoundingClientRect().bottom;
-        if (sectionTop < window.innerHeight * 0.75 && sectionBottom > 0) {
-          section.classList.add('visible');
-        } else {
-          section.classList.remove('visible');
-        }
-      });
-    };
-
-    window.addEventListener('scroll', checkVisibility);
-    window.addEventListener('load', checkVisibility);
-
-    // Show Puasa Popup
-    const puasaPopup = document.querySelector('.puasa-popup');
-    setTimeout(() => {
-      puasaPopup.classList.add('active');
-    }, 3000); // Muncul setelah 3 detik
-
-    // Close Puasa Popup
-    function closePopup() {
-      puasaPopup.classList.remove('active');
-    }
   </script>
 </body>
 </html>
